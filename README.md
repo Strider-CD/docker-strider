@@ -1,0 +1,21 @@
+# docker-strider
+
+Semi-official docker build that does NOT ship with internal Mongo or SSH.
+
+It contains only strider, its dependent modules and nodejs/npm.
+
+For MongoDB, you must pass in a DB_URI
+
+## Building
+
+Clone the project and `docker build . -t strider-image`
+
+## Running
+
+Say you've created a database at MongoLab, here's how you would run it:
+
+`docker run -e "DB_URI=mongodb://keyvan:passwd@ds041380.mongolab.com:41380/strider-testing" -e "NODE_ENV=production" strider-image`
+
+## Linking
+
+I haven't tried linking against a MongoDB image yet, but I will add instructions when I do.
