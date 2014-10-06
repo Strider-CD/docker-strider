@@ -1,5 +1,7 @@
-build:
-	docker build -t quay.io/keyvanfatehi/strider:1.5.0 .
+TAG=`cat TAG`
 
-push:
-	docker push quay.io/keyvanfatehi/strider:1.5.0
+build:
+	docker build -t $(TAG) .
+
+push: build
+	docker push $(TAG)
