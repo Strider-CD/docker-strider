@@ -18,4 +18,7 @@ Say you've created a database at MongoLab, here's how you would run it:
 
 ## Linking
 
-I haven't tried linking against a MongoDB image yet, but I will add instructions when I do.
+A compatible mongo image is included.
+
+`docker run --name strider --link strider-mongo:mongo`
+
