@@ -12,17 +12,18 @@ Hosted on Quay.io. Find what to `docker pull` by checking the TAG file
 
 ## Building
 
-Clone the project and `docker build . -t strider-image`
+Clone the project and `docker build . -t <TAG>`
 
 ## Running
 
 Say you've created a database at MongoLab, here's how you would run it:
 
-`docker run -e "DB_URI=mongodb://keyvan:passwd@ds041380.mongolab.com:41380/strider-testing" -e "NODE_ENV=production" strider-image`
+`docker run -e "DB_URI=mongodb://keyvan:passwd@ds041380.mongolab.com:41380/strider-testing" <TAG>`
 
 ## Linking
 
-A compatible mongo image is included.
+A compatible mongo image is included. It's left up to the user to decide how to use it.
 
-`docker run --name strider --link strider-mongo:mongo`
+## Security
 
+This image can generate an admin user with a random password. Set environment variable `GENERATE_ADMIN_USER` to use this feature.
