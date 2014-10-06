@@ -5,6 +5,8 @@ RUN mkdir -p /opt/strider
 WORKDIR /opt/strider
 RUN npm install strider@1.5.0
 RUN chown -R strider:strider /opt/strider
+ADD start.sh /usr/local/bin/start.sh
+RUN chmod a+x /usr/local/bin/start.sh
 USER strider
-CMD ["/opt/strider/node_modules/strider/bin/strider"]
+CMD ["/usr/local/bin/start.sh"]
 EXPOSE 3000
