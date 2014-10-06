@@ -10,4 +10,4 @@ if [[ -n $GENERATE_ADMIN_USER ]]; then
   echo "Admin User: $ADMIN, Admin Pass: $PASSWD"
 fi
 
-/opt/strider/node_modules/strider/bin/strider
+/opt/strider/node_modules/strider/bin/strider $@

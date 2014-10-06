@@ -17,4 +17,4 @@ ENV NODE_ENV production
 ENV HOME /home/strider
 ENV PORT 3000
 EXPOSE 3000
-CMD ["/usr/local/bin/start.sh"]
+ENTRYPOINT ["/usr/local/bin/start.sh"]
