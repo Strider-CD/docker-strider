@@ -6,6 +6,10 @@ It contains only strider, its dependent modules and nodejs/npm.
 
 For MongoDB, you must pass in a DB_URI
 
+## Pulling
+
+Hosted on Quay.io. Find what to `docker pull` by checking the TAG file
+
 ## Building
 
 Clone the project and `docker build . -t strider-image`
