@@ -9,6 +9,7 @@ ENV LC_ALL en_US.UTF-8
 RUN git clone --branch 1.5.0 --depth 1 https://github.com/Strider-CD/strider /strider/src
 RUN cd /strider/src && npm install --production
 RUN adduser --disabled-password --gecos "" --home /strider strider
+RUN ln -s /strider/src/bin/strider /usr/local/bin/strider
 
 RUN chown -R strider:strider /strider
 COPY start.sh /usr/local/bin/start.sh
