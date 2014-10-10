@@ -5,3 +5,6 @@ build:
 
 push: build
 	docker push $(TAG)
+
+test: build
+	docker run --rm -t $(TAG) --help

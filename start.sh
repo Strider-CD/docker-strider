@@ -6,4 +6,4 @@ if [[ -n $GENERATE_ADMIN_USER ]]; then
   echo "Admin User: $ADMIN, Admin Pass: $PASSWD"
 fi
 
-strider
+strider $@
