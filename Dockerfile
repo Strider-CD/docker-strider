@@ -1,7 +1,7 @@
 FROM dockerfile/nodejs
 MAINTAINER Keyvan Fatehi <keyvanfatehi@gmail.com>
 
-ENV STRIDER_VERSION 1.6.0-pre.1
+ENV STRIDER_VERSION 1.5.0
 
 RUN locale-gen en_US.UTF-8
 ENV LANG en_US.UTF-8  
@@ -26,9 +26,6 @@ RUN ln -s /strider/src/bin/strider /usr/local/bin/strider
 COPY start.sh /usr/local/bin/start.sh
 RUN chmod a+x /usr/local/bin/start.sh
 USER strider
-
-# this line can come out for anything after 1.6.0-pre.1
-RUN touch /strider/src/.restart
 
 WORKDIR /strider
 ENV NODE_ENV production
