@@ -1,7 +1,7 @@
 FROM dockerfile/nodejs
 MAINTAINER Keyvan Fatehi <keyvanfatehi@gmail.com>
 
-ENV STRIDER_VERSION 1.5.0
+ENV STRIDER_TAG 1.6.0-pre.2
 
 RUN locale-gen en_US.UTF-8
 ENV LANG en_US.UTF-8  
@@ -14,7 +14,7 @@ RUN chown -R strider:strider /strider
 USER strider
 ENV HOME /strider
 
-RUN git clone --branch $STRIDER_VERSION --depth 1 https://github.com/Strider-CD/strider /strider/src
+RUN git clone --branch $STRIDER_TAG --depth 1 https://github.com/Strider-CD/strider /strider/src
 RUN cd /strider/src
 WORKDIR /strider/src
 RUN npm install
