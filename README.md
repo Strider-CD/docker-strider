@@ -2,9 +2,9 @@
 
 Semi-official docker build that does NOT ship with internal Mongo or SSH.
 
-It contains only strider, its dependent modules and nodejs/npm.
+It contains supervisord, latest strider, its dependent modules and nodejs/npm.
 
-For MongoDB, you must pass in a DB_URI
+You must pass in a DB_URI with a valid mongodb connection string.
 
 ## Pulling
 

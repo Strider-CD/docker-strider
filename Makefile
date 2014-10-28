@@ -7,4 +7,4 @@ push: build
 	docker push $(TAG)
 
 test: build
-	docker run --rm -t $(TAG) --help
+	docker run --rm -p 3000:3000 -e GENERATE_ADMIN_USER=true -t $(TAG)
