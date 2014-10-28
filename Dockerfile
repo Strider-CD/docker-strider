@@ -1,5 +1,11 @@
-FROM dockerfile/supervisor
+FROM dockerfile/ubuntu
 MAINTAINER Keyvan Fatehi <keyvanfatehi@gmail.com>
+
+RUN \
+  apt-get update && \
+  apt-get install -y supervisor && \
+  rm -rf /var/lib/apt/lists/* && \
+  sed -i 's/^\(\[supervisord\]\)$/\1\nnodaemon=true/' /etc/supervisor/supervisord.conf
 
 ENV STRIDER_TAG 1.6.0-pre.2
 
@@ -18,8 +24,7 @@ RUN chown -R strider:strider /strider
 USER strider
 ENV HOME /strider
 
-
-RUN git clone --branch $STRIDER_TAG --depth 1 https://github.com/Strider-CD/strider /strider/src
+RUN cd $HOME && git clone --branch $STRIDER_TAG --depth 1 https://github.com/Strider-CD/strider /strider/src
 RUN cd /strider/src
 WORKDIR /strider/src
 RUN npm install
