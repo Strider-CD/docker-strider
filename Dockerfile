@@ -3,6 +3,11 @@ MAINTAINER Keyvan Fatehi <keyvanfatehi@gmail.com>
 
 ENV STRIDER_TAG 1.6.0-pre.2
 
+RUN locale-gen en_US.UTF-8
+ENV LANG en_US.UTF-8  
+ENV LANGUAGE en_US:en  
+ENV LC_ALL en_US.UTF-8  
+
 USER root
 RUN apt-get update && apt-get -y install nodejs npm
 RUN update-alternatives --install /usr/bin/node node /usr/bin/nodejs 10
