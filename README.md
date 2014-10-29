@@ -18,7 +18,7 @@ Clone the project and `docker build . -t <TAG>`
 
 Say you've created a database at MongoLab, here's how you would run it:
 
-`docker run -e "DB_URI=mongodb://keyvan:passwd@ds041380.mongolab.com:41380/strider-testing" <TAG>`
+`docker run -e "DB_URI=mongodb://keyvan:mypass@ds041380.mongolab.com:41380/strider-testing" <TAG>`
 
 ## Linking
 
