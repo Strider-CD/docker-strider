@@ -1,7 +1,7 @@
 FROM ubuntu:14.04
 MAINTAINER Keyvan Fatehi <keyvanfatehi@gmail.com>
 
-ENV STRIDER_TAG 1.6.0-pre.2
+ENV STRIDER_TAG v1.6.4
 ENV STRIDER_REPO https://github.com/Strider-CD/strider
 
 RUN locale-gen en_US.UTF-8
@@ -27,7 +27,7 @@ USER strider
 ENV HOME /home/strider
 
 RUN git clone --branch $STRIDER_TAG --depth 1 $STRIDER_REPO /opt/strider/src && \
-  cd /opt/strider/src && npm install && npm run postinstall && npm run build
+  cd /opt/strider/src && npm install && npm run build
 COPY start.sh /usr/local/bin/start.sh
 ADD strider.conf /etc/supervisor/conf.d/strider.conf
 EXPOSE 3000
