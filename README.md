@@ -22,7 +22,30 @@ Say you've created a database at MongoLab, here's how you would run it:
 
 ## Linking
 
-A compatible mongo image is included. It's left up to the user to decide how to use it.
+A compatible mongo image is included.
+
+Following example should lead you into a side-by-side mongo/strider containers creation.
+
+Building image `mongodb-img`:
+`docker build ./mongo -t mongodb-img`
+
+Building image `strider-img`:
+`docker build . -t strider-img`
+
+Launching a container called `database` based on previously built image `mongodb-img`:
+`docker run -d --name database -i mongodb-img`
+Notice that no ports were exposed.
+
+Now we would create a container called `strider` based on previously built image `strider-img` image that is linked to previous launched `database` container. We also gonna to expose `strider:3000` into `host:80`.
+```bash
+docker run -d \
+  --name strider \
+  --link database:database \
+  -e "DB_URI=mongodb://database:27017" \
+  -p 80:3000 \
+  strider-img
+```
+
 
 ## Security
 
