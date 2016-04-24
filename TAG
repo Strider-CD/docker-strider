@@ -1,1 +1,1 @@
-quay.io/keyvanfatehi/strider:1.6.0-pre.2
+quay.io/keyvanfatehi/strider:v1.6.4
