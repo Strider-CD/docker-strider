@@ -12,7 +12,7 @@ Hosted on Quay.io. Find what to `docker pull` by checking the TAG file
 
 ## Building
 
-Clone the project and `docker build . -t <TAG>`
+Clone the project and `docker build -t <TAG> .`
 
 ## Running
 
@@ -27,10 +27,10 @@ A compatible mongo image is included.
 Following example should lead you into a side-by-side mongo/strider containers creation.
 
 Building image `mongodb-img`:
-`docker build ./mongo -t mongodb-img`
+`docker build -t mongodb-img ./mongo`
 
 Building image `strider-img`:
-`docker build . -t strider-img`
+`docker build -t strider-img .`
 
 Launching a container called `database` based on previously built image `mongodb-img`:
 `docker run -d --name database -i mongodb-img`
