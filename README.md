@@ -17,7 +17,7 @@ Clone the project and `docker build . -t <TAG>`
 ## Running
 
 ### docker-compose
-If you have [docker-compose](https://docs.docker.com/compose/overview/) v1.6.x or higher, you can simply run the following command:
+If you have [docker-compose](https://docs.docker.com/compose/overview/) v1.6.x or higher, you can simply clone this repo and then run the following command:
 
 ```
 docker-compose up -d --build
