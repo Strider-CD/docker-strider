@@ -16,6 +16,22 @@ Clone the project and `docker build . -t <TAG>`
 
 ## Running
 
+### docker-compose
+If you have [docker-compose](https://docs.docker.com/compose/overview/) v1.6.x or higher, you can simply run the following command:
+
+```
+docker-compose up -d --build
+```
+
+You can then visit `http://localhost` on linux (Ubuntu). On Mac OSX, you can run `echo $(docker-machine ip default)` in terminal, and then visit that IP address in your browser.  By default, an example admin account will be created for you. To obtain the credentials, run:
+
+```
+docker-compose logs strider | grep "Admin User"
+```
+
+Enter the credentials in your browser at the above address to get started with Strider-CD.
+
+### Manually
 Say you've created a database at MongoLab, here's how you would run it:
 
 `docker run -e "DB_URI=mongodb://keyvan:mypass@ds041380.mongolab.com:41380/strider-testing" <TAG>`
